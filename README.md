@@ -60,5 +60,5 @@ await fs.writeFile("path/to/out/latest.yml", channelYml, "utf8")
 MIT. Please see LICENSE for details.
 
 [electron]: https://github.com/electron/electron
-[npm_img]: https://img.shields.io/npm/v/@felixrieseberg/electron-updater-yaml.svg
-[npm_url]: https://npmjs.org/package/@felixrieseberg/electron-updater-yaml
+[npm_img]: https://img.shields.io/npm/v/electron-updater-yaml.svg
+[npm_url]: https://npmjs.org/package/electron-updater-yaml
