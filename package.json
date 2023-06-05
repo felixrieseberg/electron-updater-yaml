@@ -1,0 +1,48 @@
+{
+  "name": "electron-updater-yaml",
+  "version": "1.0.0",
+  "description": "Create yml/yaml files for `electron-updater`.",
+  "main": "dist/cjs/yaml.js",
+  "module": "dist/esm/yaml.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixrieseberg/electron-updater-yaml.git"
+  },
+  "author": {
+    "name": "Felix Rieseberg",
+    "email": "felix@felixrieseberg.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felixrieseberg/electron-updater-yaml/issues"
+  },
+  "homepage": "https://github.com/felixrieseberg/electron-updater-yaml",
+  "devDependencies": {
+    "@types/debug": "^4.1.8",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.29.0",
+    "eslint-config-eslint": "^7.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "standard": "^17.0.0",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "lint": "eslint --ext .ts,.js src",
+    "prepublishOnly": "yarn build"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
