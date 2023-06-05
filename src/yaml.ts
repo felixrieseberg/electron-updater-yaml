@@ -115,11 +115,13 @@ async function getFiles(installerPath: string, platform: Platform) {
   }
 
   for (const file of files) {
+    const filePath = path.join(installerPath, file);
+
     result.push({
       name: file,
-      path: path.join(installerPath, file),
-      size: getFileSize(file),
-      hash: await getFileHash(file)
+      path: filePath,
+      size: getFileSize(filePath),
+      hash: await getFileHash(filePath)
     });
   }
 
