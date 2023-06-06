@@ -28,7 +28,7 @@ export async function getAppUpdateYml(options: AppUpdateYmlOptions) {
   const channel = options.channel || 'latest';
   const updaterCacheDirName = options.updaterCacheDirName || `${name.toLowerCase()}-updater`;
   let ymlContents = `provider: generic
-url: ${url}
+url: '${url}'
 channel: ${channel}
 updaterCacheDirName: ${updaterCacheDirName}\n`;
 
