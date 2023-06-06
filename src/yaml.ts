@@ -15,6 +15,7 @@ export interface AppUpdateYmlOptions {
   channel?: string;
   // Name of your updater cache directory name. Defaults to "${name}-latest".
   updaterCacheDirName?: string;
+  publisherName?: string;
 }
 
 /**
@@ -23,13 +24,18 @@ export interface AppUpdateYmlOptions {
  * to determine where to download updates from.
  */
 export async function getAppUpdateYml(options: AppUpdateYmlOptions) {
-  const { name, url } = options;
+  const { name, url, publisherName } = options;
   const channel = options.channel || 'latest';
   const updaterCacheDirName = options.updaterCacheDirName || `${name.toLowerCase()}-updater`;
-  const ymlContents = `provider: generic
-url: '${url}'
+  let ymlContents = `provider: generic
+url: ${url}
 channel: ${channel}
 updaterCacheDirName: ${updaterCacheDirName}\n`;
+
+  if (publisherName) {
+    ymlContents += `publisherName: 
+  - ${publisherName}\n`;
+  }
 
   return ymlContents;
 }
