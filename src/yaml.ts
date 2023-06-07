@@ -73,10 +73,10 @@ export async function getChannelYml(options: ChannelYmlOptions) {
   }
 
   const ymlContents = `version: ${version}
-  files:${filesText}
-  path: ${files[0].name}
-  sha512: ${files[0].hash}
-  releaseDate: '${releaseDate}'\n`;
+files:${filesText}
+path: ${files[0].name}
+sha512: ${files[0].hash}
+releaseDate: '${releaseDate}'\n`;
 
   return ymlContents;
 }
